@@ -25,16 +25,18 @@ function App() {
 
   function setData(e) {
     switch (e.target.id) {
-      case "1":
+      case "_name_":
         stateModel.name = e.target.value;
         break;
 
-      case "2":
+      case "_lastName_":
         stateModel.lastName = e.target.value;
         break;
 
-      case "3":
+      case "_age_":
         stateModel.age = e.target.value;
+        break;
+      default:
         break;
     }
     console.log(stateModel);
@@ -133,9 +135,10 @@ function App() {
         <Route path={"/Formulario"}>
           <Container style={{ padding: 20 }}>
             <div onChange={(e) => setData(e)}>
-              <input id="1" placeholder={"Nombre"} />
-              <input id="2" placeholder={"Apellido"} />
-              <input id="3" placeholder={"Edad"} />
+              //<input placeholder={"Nombre"}/>
+              <input id="_name_" placeholder={"Nombre"} onChange={(e)=> setData(e)}/>
+              <input id="_lastName_" placeholder={"Apellido"} onChange={(e)=> setData(e)}/>
+              <input id="_age_" placeholder={"Edad"} onChange={(e)=> setData(e)}/>
             </div>
           </Container>
         </Route>
